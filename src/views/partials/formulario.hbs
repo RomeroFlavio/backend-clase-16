@@ -1,0 +1,38 @@
+<div>
+    <form action="/productos" method="POST" enctype="multipart/form-data">
+        Titulo: <input type="text" name="title" id="title" /> <br/>
+        Precio: <input type="number" name="price" id="price" /> <br/>
+        Archivo: <input type="file" name="myfile" id="myfile" /> <br/>
+        <input type="submit" value="Enviar">
+    </form>
+    <a href="/productos">Ir a productos</a>
+
+    <div class="bg-info w-50 mt-5">
+        <h2>Lista de productos</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Portada</th>
+                </tr>
+            </thead>
+            <tbody id="products"></tbody>
+        </table>
+    </div>
+
+    <div class="bg-info w-50 mt-5">
+        <h2>Centro de Mensajes</h2>
+        <form class="form" onsubmit="return addMessage(this)">
+            <div class="input-group w-75 mx-auto" onclick="return validation()">
+                <div class="input-group-text">@</div>
+                <input class="form-control" type="email" name="author" id="author" placeholder="Ingrese email"> 
+            </div>
+            <div id="messages" class="mt-5 mb-5"></div>
+            <div class="input-group w-75 mx-auto">
+                <input class="form-control" type="text" name="message" id="message" placeholder="Ingrese su mensaje" disabled>
+                <button class="btn btn-primary ms-3" type="submit" name="btnMessage" id="btnMessage" disabled>Enviar</button>
+            </div>
+        </form>
+    </div>
+</div>
